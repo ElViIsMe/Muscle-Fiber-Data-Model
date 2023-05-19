@@ -12,6 +12,7 @@ In exercitation non esse tempor qui incididunt cupidatat esse anim dolor duis Lo
 
 <details>
   <summary>Inspect attributes</summary>
+  
 - muscles
   - Type: Muscle
   - Description: All muscles
@@ -32,6 +33,7 @@ Nostrud amet incididunt est veniam aliqua mollit voluptate sint. Incididunt non 
 
 <details>
   <summary>Inspect attributes</summary>
+
 - name
   - Type: string
   - Description: Name of the muscle
@@ -49,6 +51,7 @@ In cupidatat mollit ipsum mollit. Do reprehenderit minim consequat mollit sit ad
 
 <details>
   <summary>Inspect attributes</summary>
+
 - force
   - Type: float
   - Description: Contraction force
@@ -73,6 +76,7 @@ Mollit quis proident nisi magna. Exercitation excepteur eu amet est ex reprehend
 
 <details>
   <summary>Inspect attributes</summary>
+
 - x
   - Type: float
   - Description: X-coordinate of the point
@@ -90,6 +94,7 @@ Velit aliquip sit non deserunt dolor deserunt labore deserunt cupidatat veniam a
 
 <details>
   <summary>Inspect attributes</summary>
+
 - force
   - Type: float
   - Description: Force of the fiber
