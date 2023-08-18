@@ -1,6 +1,6 @@
 # Muscle Data Model
 
-Ipsum Lorem eiusmod incididunt nostrud sunt elit Lorem. Dolor fugiat elit excepteur quis laboris nostrud. Aliquip incididunt eu nisi sit. Cillum consectetur elit Lorem occaecat duis. 
+Muskeln sind toll!
 
 ## Objects
 
