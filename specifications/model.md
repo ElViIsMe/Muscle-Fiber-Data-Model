@@ -90,12 +90,17 @@ Different measurement information on muscles
 
 ### ContractionHistoryDependentEffects
 
+<details>
+  <summary>Inspect attributes</summary>
+
 - residual force-enhancement
   - Type: float
   - Description: Amount of force-enhancement in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
 - residual force-depression
   - Type: float
   - Description: Amount of force-depression in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
+
+</details>
 
 ### Position
 
@@ -113,6 +118,7 @@ Planar position data and joint angle(s)(in case of muscles spanning over multipl
 - degree
   - Type: float
   - Description: Degree in relation to zero-position of the foot
+
 </details>
 
 ### MuscleFiber
@@ -129,8 +135,16 @@ Information on the characteristics of muscle fibres of the respective muscles. P
   - Type: float
   - Description: Length of the fiber
 - pennation_angle
-  - Type: float
+  - Type: {segment: PennationSegment, reference: string, value: float}
   - Description: Angle of pennation
-  - Min: 0
-  - Max: 89
+
 </details>
+
+## Enumerations
+
+### PennationSegment
+
+```python
+SURFACE = "surface segment"
+DEEP = "deep segment"
+```
