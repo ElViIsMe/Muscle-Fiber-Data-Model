@@ -4,11 +4,11 @@ Muskeln sind toll!
 
 ## Objects
 
-Aute duis do ad non laboris. Quis aliqua cillum ullamco do aute dolor incididunt. Sint sit mollit voluptate deserunt consectetur. Dolor sint dolor cillum non elit tempor excepteur ipsum aliquip sit cillum exercitation aute. Aliquip quis Lorem dolore qui ullamco ipsum culpa nisi anim. Nulla magna anim qui sint et Lorem quis ut nulla. Occaecat amet nulla ea id reprehenderit deserunt sit veniam.
+Sie sind wirklich toll!
 
 ### Root
 
-In exercitation non esse tempor qui incididunt cupidatat esse anim dolor duis Lorem ullamco enim. Incididunt enim do labore pariatur aliquip proident elit nostrud dolore laboris labore ad tempor ad. Labore duis exercitation adipisicing velit id ea eiusmod aliquip enim ullamco.
+Main reference variables for center of tree-like model structure
 
 <details>
   <summary>Inspect attributes</summary>
@@ -17,19 +17,15 @@ In exercitation non esse tempor qui incididunt cupidatat esse anim dolor duis Lo
   - Type: Muscle
   - Description: All muscles
   - Multiple: True
-- isometric_measurements
+- measurements
   - Type: Measurement
-  - Description: Enter something
-  - Multiple: True
-- isokinetic_measurements
-  - Type: Measurement
-  - Description: Enter something
+  - Description: Type of measurement
   - Multiple: True
 </details>
 
 ### Muscle
 
-Nostrud amet incididunt est veniam aliqua mollit voluptate sint. Incididunt non deserunt tempor aute labore tempor duis magna ad culpa. Incididunt ea qui veniam duis aliqua enim exercitation ea. Culpa officia ipsum in aliqua reprehenderit eu sunt quis incididunt veniam irure sunt. Nostrud velit laborum quis mollit adipisicing fugiat exercitation deserunt adipisicing magna. Id cupidatat minim anim minim minim nostrud.
+Summary of information on different muscles. 
 
 <details>
   <summary>Inspect attributes</summary>
@@ -37,27 +33,44 @@ Nostrud amet incididunt est veniam aliqua mollit voluptate sint. Incididunt non 
 - name
   - Type: string
   - Description: Name of the muscle
-- isometric_measurements
-  - Type: Measurement
-  - Description: Measurements with regard to the muscle
-- isokinetic_measurements
-  - Type: Measurement
-  - Description: Measurements with regard to the muscle
+
 </details>
 
 ### Measurement
 
-In cupidatat mollit ipsum mollit. Do reprehenderit minim consequat mollit sit ad incididunt. Irure ullamco qui nulla consequat duis sit veniam. Nulla cupidatat enim pariatur mollit aliqua commodo deserunt non enim qui tempor est excepteur labore. Ex aliqua minim eu id laboris.
+Different measurement information on muscles
 
 <details>
   <summary>Inspect attributes</summary>
 
+- muscle
+  - Type: @Muscle.name
+  - Description: The muscle that has been measured
+- isometric_measurements
+  - Type: Measurement
+  - Description: Measurements at same muscle length
+  - Multiple: True
+- isokinetic_measurements
+  - Type: Measurement
+  - Description: Measurements with constant muscle movement
+  - Multiple: True
+- force_length_relationship
+  - Type: float
+  - Description: Force exerted at different muscle lengths, isometric measurement
+  - Multiple: True
+- force_velocity_relationship
+  - Type: float
+  - Description: Force exerted at different contraction velocities, isokinetic measurement
+  - Multiple: True
+- contraction_history_dependent_effects
+  - Type: ContractionHistoryDependentEffects
+  - Description: Information on whether (residual) force-enhancement and/or force-depression have been recorded for the respective muscle, combination of isometric and isokinetic measurement
 - force
   - Type: float
-  - Description: Contraction force
+  - Description: Maximum isometric contraction force
 - velocity
   - Type: float
-  - Description: Contraction velocity
+  - Description: Maximum isokinetic contraction velocity
 - position
   - Type: Position
   - Description: Spatial data
@@ -68,11 +81,25 @@ In cupidatat mollit ipsum mollit. Do reprehenderit minim consequat mollit sit ad
 - fiber
   - Type: MuscleFiber
   - Description: Current state of the fiber
+- muscle_thickness
+  - Type: float
+  - Description: Information on the muscle thickness of the respective muscle, for bipenate/segmented muscles information of the different compartments as well as the sum is included
+  - Multiple: True
+
 </details>
+
+### ContractionHistoryDependentEffects
+
+- residual force-enhancement
+  - Type: float
+  - Description: Amount of force-enhancement in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
+- residual force-depression
+  - Type: float
+  - Description: Amount of force-depression in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
 
 ### Position
 
-Mollit quis proident nisi magna. Exercitation excepteur eu amet est ex reprehenderit ullamco ipsum occaecat do ut. Commodo magna anim laborum nostrud aute id ipsum velit laborum. Eiusmod qui sunt laborum elit dolor incididunt est commodo eu sint labore culpa officia. Ex laboris excepteur ad duis reprehenderit consectetur amet.
+Planar position data and joint angle(s)(in case of muscles spanning over multiple joints) of muscle for certain measurement criteria. Depending on future measurements a third axis variable for 3D-measurements should be included.
 
 <details>
   <summary>Inspect attributes</summary>
@@ -90,7 +117,7 @@ Mollit quis proident nisi magna. Exercitation excepteur eu amet est ex reprehend
 
 ### MuscleFiber
 
-Velit aliquip sit non deserunt dolor deserunt labore deserunt cupidatat veniam aliquip est nisi. Sit fugiat do voluptate cupidatat amet aute sint. Est Lorem duis sint est deserunt eiusmod ad duis officia. Incididunt nulla proident sint duis nulla cupidatat cillum proident. Do ad consectetur cupidatat pariatur laborum. Eiusmod labore dolor mollit nisi do dolore ad amet. Id laborum aliqua enim pariatur tempor culpa adipisicing ad aliquip.
+Information on the characteristics of muscle fibres of the respective muscles. Pennation angle should include information of whether their are multiple muscle segements/where and how the angle is measured.
 
 <details>
   <summary>Inspect attributes</summary>
