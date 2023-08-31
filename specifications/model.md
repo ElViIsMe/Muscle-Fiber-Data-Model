@@ -17,7 +17,7 @@ Main reference variables for center of tree-like model structure
   - Type: Muscle
   - Description: All muscles
   - Multiple: True
--measurements
+- measurements
   - Type: Measurement
   - Description: Type of measurement
   - Multiple: True
@@ -33,12 +33,7 @@ Summary of information on different muscles.
 - name
   - Type: string
   - Description: Name of the muscle
-- isometric_measurements
-  - Type: Measurement
-  - Description: Measurements with regard to the muscle at constant length
-- isokinetic_measurements
-  - Type: Measurement
-  - Description: Measurements with regard to the muscle at constant motion
+
 </details>
 
 ### Measurement
@@ -47,7 +42,10 @@ Different measurement information on muscles
 
 <details>
   <summary>Inspect attributes</summary>
-  
+
+- muscle
+  - Type: @Muscle.name
+  - Description: The muscle that has been measured
 - isometric_measurements
   - Type: Measurement
   - Description: Measurements at same muscle length
@@ -56,21 +54,17 @@ Different measurement information on muscles
   - Type: Measurement
   - Description: Measurements with constant muscle movement
   - Multiple: True
-- force-length-relationship
-  - Type: array
+- force_length_relationship
+  - Type: float
   - Description: Force exerted at different muscle lengths, isometric measurement
-- force-velocity-relationship
-  - Type: array
+  - Multiple: True
+- force_velocity_relationship
+  - Type: float
   - Description: Force exerted at different contraction velocities, isokinetic measurement
-- contraction-histoy dependent effects
-  - Type: string
+  - Multiple: True
+- contraction_history_dependent_effects
+  - Type: ContractionHistoryDependentEffects
   - Description: Information on whether (residual) force-enhancement and/or force-depression have been recorded for the respective muscle, combination of isometric and isokinetic measurement
-- residual force-enhancement
-  - Type: float
-  - Description: Amount of force-enhancement in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
-- residual force-depression
-  - Type: float
-  - Description: Amount of force-depression in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
 - force
   - Type: float
   - Description: Maximum isometric contraction force
@@ -87,10 +81,21 @@ Different measurement information on muscles
 - fiber
   - Type: MuscleFiber
   - Description: Current state of the fiber
-- muscle thickness
-  - Type: array
+- muscle_thickness
+  - Type: float
   - Description: Information on the muscle thickness of the respective muscle, for bipenate/segmented muscles information of the different compartments as well as the sum is included
+  - Multiple: True
+
 </details>
+
+### ContractionHistoryDependentEffects
+
+- residual force-enhancement
+  - Type: float
+  - Description: Amount of force-enhancement in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
+- residual force-depression
+  - Type: float
+  - Description: Amount of force-depression in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
 
 ### Position
 
