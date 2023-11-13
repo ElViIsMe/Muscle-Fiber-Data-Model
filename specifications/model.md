@@ -65,19 +65,32 @@ Different measurement information on muscles
 - contraction_history_dependent_effects
   - Type: ContractionHistoryDependentEffects
   - Description: Information on whether (residual) force-enhancement and/or force-depression have been recorded for the respective muscle, combination of isometric and isokinetic measurement
+- stretch-shortening cycle
+  - Type: StretchShorteningCycle
+  - Description: Information on whether data on the stretch-shortening cycle of the respective muscle has been recorded, combination of isometric and isokinetic measurement
 - force
   - Type: float
   - Description: Maximum isometric contraction force
+- contraction time
+  - Type: float
+  - Description: contraction time for the different contraction protocolls
 - velocity
   - Type: float
   - Description: Maximum isokinetic contraction velocity
 - position
   - Type: Position
-  - Description: Spatial data
+  - Description: Spatial data on measurement device (e.g. ISOMED)
 - live_position
   - Type: Position
-  - Description: Live positions
+  - Description: Live positions deviating from the measurement device through soft-tissue movement
   - Multiple: True
+- joint angle
+  - Type: float
+  - Description: angle of the joint(s) the muscle contracts over
+  - Multiple: True
+- leverarm
+  - Type: float
+  - Description: Leverarm of the muscle in [m]
 - fiber
   - Type: MuscleFiber
   - Description: Current state of the fiber
@@ -85,6 +98,9 @@ Different measurement information on muscles
   - Type: float
   - Description: Information on the muscle thickness of the respective muscle, for bipenate/segmented muscles information of the different compartments as well as the sum is included
   - Multiple: True
+- architectural gearing ratio
+  - Type: float
+  - Description: Ratio of the contraction velocity of the muscle-tendon-unit over the the contraction velocity of the muscle fascicle
 
 </details>
 
@@ -95,10 +111,34 @@ Different measurement information on muscles
 
 - residual force-enhancement
   - Type: float
-  - Description: Amount of force-enhancement in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
+  - Description: Amount of force-enhancement in % of maximum isometric contraction force measured x seconds after ramp, combination of isometric and isokinetic measurement
 - residual force-depression
   - Type: float
-  - Description: Amount of force-depression in % of maximum isometric contraction force, combination of isometric and isokinetic measurement
+  - Description: Amount of force-depression in % of maximum isometric contraction force measured x seconds after ramp, combination of isometric and isokinetic measurement
+- force-enhancement
+  - Type: float
+  - Description: Amount of force-enhancement in % of maximum isometric contraction force at peak
+- force-depression
+  - Type: float
+  - Description: Amount of force-depression in % of maximum isometric contraction force at peak
+- range of motion
+  - Type: float
+  - Description: Range of motion/ramp used for the protocolls
+  - Multiple: True
+- rampspeed
+  - Type: float
+  - Description: Speed at which the ramps have been performed in [°/s] or [m/s]
+
+</details>
+
+### StretchShorteningCycle
+
+<details>
+  <summary>Inspect attributes</summary>
+
+- SSC
+  - Type: float
+  - Description: Data on stretch-shortening cycle of the respective muscle
 
 </details>
 
